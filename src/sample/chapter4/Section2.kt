@@ -1,11 +1,11 @@
 package sample.chapter4
 
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
 
     // 2.1
     println("----2.1-----")
     val name = "Hanako"
-    println ( "Hello, $name!")
+    println("Hello, $name!")
 
     println("""
         Hello, $name!
@@ -29,7 +29,7 @@ fun main(args: Array<String>){
     val strs = arrayOf("red", "green", "blue")
     println(strs[0])
 
-    val ints2 = intArrayOf(1,2,3)
+    val ints2 = intArrayOf(1, 2, 3)
     println(ints2[0])
 
     val chars = charArrayOf('a', 'b')
@@ -37,7 +37,7 @@ fun main(args: Array<String>){
 
     // 2.3
     println("\n----2.3-----")
-    val intlist = listOf(1,2,3)
+    val intlist = listOf(1, 2, 3)
     println(intlist)
     println(intlist.size)
     println(intlist[0])
@@ -61,10 +61,10 @@ fun main(args: Array<String>){
 
     // 2.4
     println("\n----2.4---")
-    val intSet : Set<Int> = setOf(1,2,3)
+    val intSet: Set<Int> = setOf(1, 2, 3)
     println(intSet)
 
-    val charSet : MutableSet<Char> = mutableSetOf('a', 'a', 'b')
+    val charSet: MutableSet<Char> = mutableSetOf('a', 'a', 'b')
     println(charSet)
 
     charSet -= 'a'
@@ -83,16 +83,16 @@ fun main(args: Array<String>){
 
     // 2.6
     println("\n----2.6---")
-    println( 5 in 1..10)
+    println(5 in 1..10)
 
     val range: IntRange = 12..15
-    println( 5 in range)
-    println( 5 !in range)
+    println(5 in range)
+    println(5 !in range)
 
-    println( (1..5).toList())
-    println( (1..5).reversed().toList())
+    println((1..5).toList())
+    println((1..5).reversed().toList())
 
-    println( (5 downTo 1).toList())
+    println((5 downTo 1).toList())
 
     println((1..5 step 2).toList())
     println((100 downTo 0 step 25).toList())

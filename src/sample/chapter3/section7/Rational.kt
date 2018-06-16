@@ -21,13 +21,13 @@ class Rational(val n: Int, val d: Int) {
 
 
     operator fun plus(n: Int): Rational = Rational(
-            numerator + denominator *n,
+            numerator + denominator * n,
             denominator)
 }
 
 operator fun Int.plus(r: Rational) = r + this
 
 fun main(args: Array<String>) {
-    println(3 + Rational(2,1) )
-    println(1 + Rational(1,2) +2 )
+    println(3 + Rational(2, 1))
+    println(1 + Rational(1, 2) + 2)
 }

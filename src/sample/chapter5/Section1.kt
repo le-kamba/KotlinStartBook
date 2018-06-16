@@ -2,7 +2,7 @@ package sample.chapter5
 
 fun succ(i: Int) = i + 1
 
-fun square(i: Int): Int = i*i
+fun square(i: Int): Int = i * i
 
 fun hello(name: String) = "Hello, $name!"
 
@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 
     println()
 
-    fun max(a:Int, b: Int) :Int = if(b<=a) a else b
-    println( max(12,13))
-    println( max(0,-1))
+    fun max(a: Int, b: Int): Int = if (b <= a) a else b
+    println(max(12, 13))
+    println(max(0, -1))
 }

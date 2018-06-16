@@ -25,6 +25,6 @@ class Rational(val n: Int, val d: Int) {
 fun main(args: Array<String>) {
 //    println(Rational(1, 4).plus(Rational(1, 2)))
 //    println(Rational(1, 3).plus(Rational(4, 7)))
-    println(Rational(1, 2)+Rational(1, 5))
-    println(Rational(1, 6)+Rational(1, 3) + Rational(1, 2))
+    println(Rational(1, 2) + Rational(1, 5))
+    println(Rational(1, 6) + Rational(1, 3) + Rational(1, 2))
 }

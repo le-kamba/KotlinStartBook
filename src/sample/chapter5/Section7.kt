@@ -1,9 +1,9 @@
 package sample.chapter5
 
-class Counter{
+class Counter {
     private var cnt = 0
 
-    fun countUp(){
+    fun countUp() {
         cnt++
     }
 
