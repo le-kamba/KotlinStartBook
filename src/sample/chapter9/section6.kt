@@ -5,8 +5,8 @@ import sample.fuga.Baz as Beer
 
 class Baz
 
-class Bar{
-    fun ddd(){
+class Bar {
+    fun ddd() {
         Foo()
         sample.hoge.Foo()
         Beer()

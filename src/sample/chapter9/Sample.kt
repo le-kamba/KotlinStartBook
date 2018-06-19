@@ -1,19 +1,19 @@
 package sample.chapter9
 
 open class Foo {
-    private fun privateMethod(){}
-    protected fun protectedMethod(){}
+    private fun privateMethod() {}
+    protected fun protectedMethod() {}
 }
 
-class Bar2: Foo() {
-    fun execute(){
+class Bar2 : Foo() {
+    fun execute() {
         protectedMethod()
 //        privateMethod() // コンパイルエラー
     }
 }
 
 class Bax {
-    fun execute(){
+    fun execute() {
 //        protectedMethod() // コンパイルエラー
     }
 }

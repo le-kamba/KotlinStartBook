@@ -1,12 +1,12 @@
 package sample.chapter9
 
-open class Person(val name:String){
-    fun introduceMyself(){
+open class Person(val name: String) {
+    fun introduceMyself() {
         println("I am $name")
     }
 }
 
-class Student(name: String, val id:Long):Person(name)
+class Student(name: String, val id: Long) : Person(name)
 
 fun main(args: Array<String>) {
     val person: Person = Person("ゆたか")

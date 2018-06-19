@@ -1,7 +1,7 @@
 package sample.chapter9
 
-public fun publicFunction(){}
+public fun publicFunction() {}
 
-private fun privateFunction(){}
+private fun privateFunction() {}
 
-internal fun internalFunction(){}
+internal fun internalFunction() {}
