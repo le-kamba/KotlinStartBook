@@ -16,4 +16,8 @@ class Bar{
 fun main(args: Array<String>) {
     val bar: Bar = Bar()
     bar.ddd()
+
+    publicFunction()
+    internalFunction()
+//    privateFunction() // コンパイルエラー
 }
