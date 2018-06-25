@@ -1,8 +1,8 @@
 package sample.chapter13
 
-class MyInt(val value:Int){
+class MyInt(val value: Int) {
     operator fun times(that: MyInt): MyInt =
-            MyInt(value*that.value)
+            MyInt(value * that.value)
 }
 
 operator fun MyInt.mod(that: MyInt): MyInt =
@@ -10,14 +10,14 @@ operator fun MyInt.mod(that: MyInt): MyInt =
 
 class Service {
     operator fun invoke(): Char = 'A'
-    operator fun invoke(c:Char) = c
+    operator fun invoke(c: Char) = c
 }
 
 fun main(args: Array<String>) {
     val product = MyInt(3) * MyInt(5)
     println(product.value)
 
-    println( (MyInt(20) % MyInt(3)).value)
+    println((MyInt(20) % MyInt(3)).value)
 
     val service = Service()
     println(service())

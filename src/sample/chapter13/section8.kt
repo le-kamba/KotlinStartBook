@@ -1,13 +1,15 @@
 package sample.chapter13
 
-interface Greeter2{
+interface Greeter2 {
     fun greet(name: String)
 }
-object JapaneseGreeter: Greeter2{
+
+object JapaneseGreeter : Greeter2 {
     override fun greet(name: String) {
         println("こんにちは、${name}さん！")
     }
 }
+
 fun main(args: Array<String>) {
 
     JapaneseGreeter.greet("たろう")
