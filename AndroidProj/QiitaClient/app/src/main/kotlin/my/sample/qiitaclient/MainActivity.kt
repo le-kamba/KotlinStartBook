@@ -2,9 +2,10 @@ package my.sample.qiitaclient
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.ListView
+import my.sample.qiitaclient.adapter.ArticleListAdapter
 import my.sample.qiitaclient.model.Article
 import my.sample.qiitaclient.model.User
-import my.sample.qiitaclient.view.ArticleView
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,16 +13,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // ArticleViewオブジェクトを作成
-        val articleView = ArticleView(applicationContext)
+        val listAdapter = ArticleListAdapter(applicationContext)
+        listAdapter.articles = listOf(dummyArticle("Kotlin入門", "たろう"),
+                dummyArticle("Java入門", "じろう"))
 
-        // Articleオブジェクトを作成して、ArticleViewにセット
-        articleView.setArticle(Article("123",
-                "Kotlin入門",
-                "http://www.example.com/articles/123",
-                User("456", "たろう", "")))
-
-        // このアクティビティにArticleViewをセット
-        setContentView(articleView)
+        val listView: ListView = findViewById(R.id.list_view) as ListView
+        listView.adapter = listAdapter
     }
+
+    // ダミー記事を生成するメソッド
+    private fun dummyArticle(title: String, userName: String): Article =
+            Article("",
+                    title,
+                    "https://koglinlang.org/",
+                    User("", userName, "")
+            )
 }
