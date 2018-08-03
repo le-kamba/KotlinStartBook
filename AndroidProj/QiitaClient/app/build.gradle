@@ -13,7 +13,8 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "sample.qiitaclient.MockTestRunner"
     }
     buildTypes {
         release {
@@ -44,8 +45,8 @@ dependencies {
     androidTestImplementation 'com.android.support:support-annotations:27.1.1'
 //    androidTestImplementation 'org.mockito:mockito-core:2.21.0'
 //    androidTestImplementation 'com.crittercism.dexmaker:dexmaker-mockito:1.4'
+//    androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.2.0'
     androidTestImplementation "org.mockito:mockito-android:2.21.0"
-
 
     // Retrofit2
     def retrofitVersion = '2.3.0'
@@ -72,4 +73,6 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$daggerVersion"
+
 }

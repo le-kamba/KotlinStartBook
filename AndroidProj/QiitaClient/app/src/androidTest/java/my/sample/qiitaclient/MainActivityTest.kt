@@ -1,5 +1,6 @@
 package my.sample.qiitaclient
 
+import android.support.test.InstrumentationRegistry
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
@@ -13,10 +14,13 @@ import io.reactivex.Observable
 import my.sample.qiitaclient.client.ArticleClient
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.not
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.verify
+import javax.inject.Inject
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
@@ -24,6 +28,18 @@ class MainActivityTest {
     @JvmField
     @Rule
     val activityTestRule = ActivityTestRule(MainActivity::class.java)
+
+    @Inject
+    lateinit var articleClient: ArticleClient
+
+    @Before
+    fun setUp() {
+        val app = InstrumentationRegistry.getInstrumentation()
+                .targetContext
+                .applicationContext as QiitaClientApp
+        val component = app.component as MockApp.MockComponent
+        component.inject(this)
+    }
 
     @Test
     fun 各ビューが表示されていること_ただしプログレスバーは非表示() {
@@ -38,10 +54,7 @@ class MainActivityTest {
 
     @Test
     fun `検索ボタンがタップされたら、入力されたクエリ文字列で記事検索APIを叩くこと`() {
-        val articleClient = mock(ArticleClient::class.java).apply {
-            `when`(search("user:ngsw_taro")).thenReturn(Observable.just(listOf()))
-        }
-        activityTestRule.activity.articleClient = articleClient
+        `when`(articleClient.search("user:ngsw_taro")).thenReturn(Observable.just(listOf()))
 
         onView(withId(R.id.query_edit_text)).perform(typeText("user:ngsw_taro"))
         onView(withId(R.id.search_button)).perform(click())
